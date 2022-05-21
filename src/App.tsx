@@ -1,9 +1,10 @@
 import './App.css';
+import GameIndex from "./game";
 
 function App() {
   return (
     <div className="App">
-      <h1>Serious Game!</h1>
+        <GameIndex/>
     </div>
   );
 }
