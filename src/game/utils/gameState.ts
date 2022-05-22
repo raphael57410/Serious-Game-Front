@@ -19,7 +19,7 @@ export class gameState {
       game.update(ctx);
       animationFrameId = window.requestAnimationFrame(render);
     };
-
+    //Load all images before executing the game loop
     loadImages(images, render);
   }
 
