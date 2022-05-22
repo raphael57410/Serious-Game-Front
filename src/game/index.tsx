@@ -1,10 +1,20 @@
-import "./style.css"
-import "./script/main"
-import { useWindowSize } from "./windowSize";
-export default function GameIndex() {
-    const GAME_SIZE = useWindowSize();
-    console.log(GAME_SIZE)
-    return (
-        <canvas width={GAME_SIZE.width} height={GAME_SIZE.height}></canvas>
-    );
+import "./style.css";
+import { useWindowSize } from "../utils/windowSize";
+import useCanvas from "../utils/gameLoop";
+
+function GameIndex() {
+  const GAME_SIZE = useWindowSize();
+
+  const canvasRef = useCanvas();
+
+  return (
+    <canvas
+      ref={canvasRef}
+      id={"gameScreen"}
+      width={GAME_SIZE.width}
+      height={GAME_SIZE.height}
+    ></canvas>
+  );
 }
+
+export default GameIndex;
