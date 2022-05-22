@@ -15,7 +15,10 @@ export interface IPlayer {
     y: number;
   };
   direction: "left" | "right";
-
+  moveLeft: () => void;
+  moveRight: () => void;
+  jump: () => void;
+  stop: () => void;
   draw: (ctx: CanvasRenderingContext2D) => void;
   update: (ctx: CanvasRenderingContext2D) => void;
 }

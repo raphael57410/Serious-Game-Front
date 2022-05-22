@@ -30,6 +30,21 @@ export class Player implements IPlayer {
     this.direction = "right";
   }
 
+  moveLeft() {
+    this.velocity.x = -this.speed;
+    this.direction = "left";
+  }
+  moveRight() {
+    this.velocity.x = this.speed;
+    this.direction = "right";
+  }
+  jump() {
+    this.velocity.y -= 18;
+  }
+  stop() {
+    this.velocity.x = 0;
+  }
+
   draw(ctx: CanvasRenderingContext2D) {
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }

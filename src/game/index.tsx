@@ -1,12 +1,11 @@
 import "./style.css";
-import { useWindowSize } from "../utils/windowSize";
-import useCanvas from "../utils/gameLoop";
+import { useWindowSize } from "./utils/windowSize";
+import useCanvas from "./utils/useCanvas";
 
 function GameIndex() {
   const GAME_SIZE = useWindowSize();
 
   const canvasRef = useCanvas();
-
   return (
     <canvas
       ref={canvasRef}
