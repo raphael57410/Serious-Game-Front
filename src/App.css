@@ -1,0 +1,8 @@
+.app_container{
+    min-height: 100vh;
+    min-width: 100vw;
+}
+a{
+    all: unset;
+    cursor: pointer;
+}

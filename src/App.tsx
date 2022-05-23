@@ -1,11 +1,12 @@
 import './App.css';
-import { Button } from "./componenets/button";
+import { Footer } from "./componenets/layout/Footer";
+import { Header } from "./componenets/layout/Header";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Serious Game!</h1>
-        <Button name={'Se connecter'} />
+    <div className="app_container">
+      <Header />
+        <Footer />
     </div>
   );
 }

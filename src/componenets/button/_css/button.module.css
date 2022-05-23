@@ -1,3 +1,23 @@
-.container {
-    border: 2px solid black;
+.container_full {
+    all: unset;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    background: #FF5B31;
+}
+
+.container_border {
+    all: unset;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.width220{
+    width: 220px;
+}
+
+.height50{
+    height: 50px;
 }
