@@ -13,3 +13,9 @@ canvas{
 body::-webkit-scrollbar{
     display:none;
 }
+
+.gameContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}

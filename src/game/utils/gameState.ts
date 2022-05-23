@@ -5,16 +5,27 @@ import { images } from "./images";
 
 let game: IGameFunctions;
 let animationFrameId: number;
-
+const gameContainer: HTMLDivElement | null =
+  document.querySelector(".gameContainer");
 export class gameState {
   static start() {
     game = new Game(window.innerWidth, window.innerHeight);
     game.start();
   }
 
-  static loop(ctx: CanvasRenderingContext2D) {
+  static loop(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
     const render = () => {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      if (gameContainer) {
+        if (
+          canvas.width !== gameContainer?.offsetWidth ||
+          canvas.height !== gameContainer?.offsetHeight
+        ) {
+          canvas.width = gameContainer?.offsetWidth;
+          canvas.height = gameContainer?.offsetHeight;
+          game.updateGameSize(canvas.width, canvas.height);
+        }
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       game.draw(ctx);
       game.update(ctx);
       animationFrameId = window.requestAnimationFrame(render);

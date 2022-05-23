@@ -1,4 +1,3 @@
-import { IGame } from "../interfaces/IGame";
 import { Player } from "./player";
 import { IPlayer } from "../interfaces/IPlayer";
 import { InputHandler } from "../utils/inputHandler";
@@ -6,20 +5,23 @@ import { Background } from "./background";
 import { IBackground } from "../interfaces/IBackground";
 import { IGameFunctions } from "../interfaces/IGameFunctions";
 
-export class Game implements IGame, IGameFunctions {
-  gameWidth: number;
-  gameHeight: number;
+export class Game implements IGameFunctions {
+  static gameWidth: number;
+  static gameHeight: number;
   background: IBackground;
   player: IPlayer;
 
   constructor(gameWidth: number, gameHeight: number) {
-    this.gameWidth = gameWidth;
-    this.gameHeight = gameHeight;
+    Game.gameWidth = gameWidth;
+    Game.gameHeight = gameHeight;
   }
-
+  updateGameSize(gameWidth: number, gameHeight: number) {
+    Game.gameWidth = gameWidth;
+    Game.gameHeight = gameHeight;
+  }
   start() {
-    this.background = new Background(this.gameWidth, this.gameHeight);
-    this.player = new Player(this);
+    this.background = new Background();
+    this.player = new Player();
     new InputHandler(this.player);
   }
 

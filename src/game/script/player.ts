@@ -1,8 +1,7 @@
-import { IGame } from "../interfaces/IGame";
 import { IPlayer } from "../interfaces/IPlayer";
+import { Game } from "./game";
 
 export class Player implements IPlayer {
-  game: IGame;
   width: number;
   height: number;
   position: { x: number; y: number };
@@ -13,8 +12,7 @@ export class Player implements IPlayer {
     y: number;
   };
   direction: "left" | "right";
-  constructor(game: { gameWidth: number; gameHeight: number }) {
-    this.game = game;
+  constructor() {
     this.width = 50;
     this.height = 50;
     this.position = {
@@ -54,10 +52,10 @@ export class Player implements IPlayer {
     this.velocity.y += this.gravity;
     this.position.x += this.velocity.x;
 
-    if (this.position.y + this.height > this.game.gameHeight) {
+    if (this.position.y + this.height > Game.gameHeight) {
       this.velocity.y = 0;
       this.gravity = 0.5;
-      this.position.y = this.game.gameHeight - this.height;
+      this.position.y = Game.gameHeight - this.height;
     }
   }
 }

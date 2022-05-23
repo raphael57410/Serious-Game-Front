@@ -1,7 +1,4 @@
-import { IGame } from "./IGame";
-
 export interface IPlayer {
-  game: IGame;
   width: number;
   height: number;
   position: {

@@ -1,15 +1,13 @@
+import { Game } from "./game";
+
 export class Background {
-  gameWidth: number;
-  gameHeight: number;
   position: {
     x: number;
     y: number;
   };
   img: HTMLImageElement = new Image();
 
-  constructor(gameWidth: number, gameHeight: number) {
-    this.gameWidth = gameWidth;
-    this.gameHeight = gameHeight;
+  constructor() {
     this.position = {
       x: 0,
       y: 0,
@@ -22,8 +20,8 @@ export class Background {
       this.img,
       this.position.x,
       this.position.y,
-      this.gameWidth,
-      this.gameHeight
+      Game.gameWidth,
+      Game.gameHeight
     );
   }
 }

@@ -10,7 +10,7 @@ const useCanvas = () => {
       canvas = canvasRef.current;
       const ctx = canvas.getContext("2d")!;
       gameState.start();
-      gameState.loop(ctx);
+      gameState.loop(ctx, canvas);
 
       return () => {
         gameState.stop();
