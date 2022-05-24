@@ -1,0 +1,15 @@
+.title_container {
+    margin: 0;
+    font-size: 80px;
+    color: var(--title-color);
+}
+
+.white {
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    .title_container {
+        font-size: 40px;
+    }
+}

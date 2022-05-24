@@ -1,23 +1,39 @@
-.container_full {
+
+button {
     all: unset;
+    cursor: pointer;
+}
+
+.container_full {
     text-align: center;
     color: white;
     border-radius: 10px;
-    background: #FF5B31;
+    background: var(--primary-button);
+}
+
+.container_full:hover {
+    background: var(--primary-light);
 }
 
 .container_border {
-    all: unset;
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
     background: transparent;
 }
 
-.width220{
+.container_border_color {
+    text-align: center;
+    border: 2px solid var(--primary-button);
+    border-radius: 10px;
+    color: var(--primary-button);
+    background: transparent;
+}
+
+.width220 {
     width: 220px;
 }
 
-.height50{
+.height50 {
     height: 50px;
 }
