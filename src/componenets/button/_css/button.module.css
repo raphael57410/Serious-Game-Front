@@ -29,11 +29,3 @@ button {
     color: var(--primary-button);
     background: transparent;
 }
-
-.width220 {
-    width: 220px;
-}
-
-.height50 {
-    height: 50px;
-}

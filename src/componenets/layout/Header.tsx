@@ -1,22 +1,30 @@
 import styles from "./_css/header.module.css";
-import { Button } from "../button";
 import clsx from "clsx";
+import BurgerMenu from "./header/BurgerMenu";
+import { useState } from "react";
+import { BurgerNav } from "./header/BugerNav";
+import { Nav } from "./header/Nav";
 
-type Props = {};
+type Props = {
+    textWhite: true | false,
+};
 
 export function Header(props: Props) {
+    const [mobileMenuOpened, setMobileMenuOpened] = useState(true);
+
+    function openMobileMenu() {
+        setMobileMenuOpened(!mobileMenuOpened);
+    };
     return (
-        <header className={clsx(styles.header_container, "flex justifyContent_spaceBetween ")}>
-            <div className={styles.logo_container}>
-                <div className={styles.logo}></div>
+        <header className={clsx(styles.header_container, "flex justify-between relative", {
+            ["text-white"]: props.textWhite,
+        })}>
+            <div className={clsx(styles.logo_container, "ml-10")}>
+                <div className={clsx(styles.logo, "h-56 w-40")}></div>
             </div>
-            <nav
-                className={clsx(styles.nav_container, "flex justifyContent_flexEnd alignItems_center justifyContent_spaceBetween")}>
-                <a href="/">formations</a>
-                <a href="/">Contact</a>
-                <Button name={"Se connecter"} full={true}/>
-                <Button name={"S'inscrire"} full={false}/>
-            </nav>
+            <BurgerMenu visible={mobileMenuOpened} openMobileMenu={openMobileMenu}/>
+            {mobileMenuOpened && <BurgerNav/>}
+            <Nav/>
         </header>
     );
 }

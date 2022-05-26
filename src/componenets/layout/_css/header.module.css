@@ -1,6 +1,5 @@
 .header_container {
     height: 220px;
-    margin-right: 100px;
 }
 
 .nav_container {
@@ -14,7 +13,6 @@
 
 .logo {
     height: 100%;
-    margin-left: 100px;
     background-image: url("../../../assets/logo/logo.svg");
     background-repeat: no-repeat;
     background-size: contain;

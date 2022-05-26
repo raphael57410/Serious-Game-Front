@@ -13,12 +13,6 @@ a {
     height: calc(100% - 220px);
 }
 
-.section_home_container {
-    height: 100%;
-    width: 50%;
-    margin-left: 100px;
-}
-
 .img_container {
     height: 100%;
     width: 50%;
