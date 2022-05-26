@@ -9,8 +9,10 @@ const gameContainer: HTMLDivElement | null =
   document.querySelector(".gameContainer");
 export class gameState {
   static start() {
-    game = new Game(window.innerWidth, window.innerHeight);
-    game.start();
+    if (gameContainer) {
+      game = new Game(gameContainer.offsetWidth, gameContainer.offsetHeight);
+      game.start();
+    }
   }
 
   static loop(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {

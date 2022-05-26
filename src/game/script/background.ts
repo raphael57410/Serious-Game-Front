@@ -20,7 +20,7 @@ export class Background {
       this.img,
       this.position.x,
       this.position.y,
-      Game.gameWidth,
+      Game.gameHeight * 1.77,
       Game.gameHeight
     );
   }

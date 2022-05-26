@@ -1,3 +1,16 @@
 export const images: { [key: string]: string } = {
   background: "/gameAssets/environment/background.png",
+  slopingRoadRight: "/gamesAssets/groundElements/Ground_01.png",
+  // road: "/gamesAssets/groundElements/Ground_02.png",
+  // slopingRoadLeft: "/gamesAssets/groundElements/Ground_03.png",
+  // endRoadLeft: "/gamesAssets/groundElements/Ground_04.png",
+  // beforeSlopeRight: "/gamesAssets/groundElements/Ground_05.png",
+  // dirt: "/gamesAssets/groundElements/Ground_06.png",
+  // beforeSlopeLeft: "/gamesAssets/groundElements/Ground_07.png",
+  // endRoadRight: "/gamesAssets/groundElements/Ground_08.png",
+  // cliffRight: "/gamesAssets/groundElements/Ground_09.png",
+  // stoneRoadStart: "/gamesAssets/groundElements/Ground_10.png",
+  // stoneRoad: "/gamesAssets/groundElements/Ground_11.png",
+  // stoneRoadEnd: "/gamesAssets/groundElements/Ground_12.png",
+  // cliffLeft: "/gamesAssets/groundElements/Ground_13.png",
 };
