@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import styles from './_css/title.module.css'
+import styles from "./_css/title.module.css";
 
 type Props = {
     text: string,
@@ -9,6 +9,6 @@ type Props = {
 export function Title(props: Props) {
 
     return (
-        <h1 className={clsx(styles.title_container, { [styles.white]: props.white})}>{props.text}</h1>
+        <h1 className={clsx(styles.title_container, { [styles.white]: props.white })}>{props.text}</h1>
     );
 }
