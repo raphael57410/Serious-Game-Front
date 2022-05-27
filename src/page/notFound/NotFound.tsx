@@ -1,5 +1,5 @@
-import styles from "./notFound/_css/notFound.module.css";
-import { Title } from "../componenets/title";
+import styles from "./_css/notFound.module.css";
+import { Title } from "../../componenets/title";
 import clsx from "clsx";
 
 type Props = {};

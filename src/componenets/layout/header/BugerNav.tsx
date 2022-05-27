@@ -1,9 +1,15 @@
 import clsx from "clsx";
+import { useCallback } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../../button";
+import { URLS } from "../../../_configs/URLS";
+
 
 type Props = {};
 
 export function BurgerNav(props: Props) {
+    const navigate = useNavigate();
+
     return (
         <nav
             className={clsx(
@@ -11,10 +17,14 @@ export function BurgerNav(props: Props) {
                 " justify-end items-center" +
                 " justify-between absolute -bottom-40",
             )}>
-            <a href="/">formations</a>
-            <a href="/">Contact</a>
-            <Button name={"Se connecter"} full={true} width="w-full"/>
-            <Button name={"S'inscrire"} full={false} width="w-full"/>
+            <NavLink to="/">formations</NavLink>
+            <NavLink to="/">Contact</NavLink>
+            <Button onClick={
+                useCallback(() => navigate(URLS.auth.signIn(), { replace: true }), [navigate])
+            } name={"Se connecter"} full={true} width="w-full"/>
+            <Button onClick={
+                useCallback(() => navigate(URLS.auth.signIn(), { replace: true }), [navigate])
+            } name={"S'inscrire"} full={false} width="w-full"/>
         </nav>
     );
 }
