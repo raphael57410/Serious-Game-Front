@@ -8,6 +8,7 @@ module.exports = {
         textColor: 'var(--text-color)',
       },
       fontSize: {
+        mediumSize: '28px',
         titleSize: '80px',
         titleMobileSize: '16px',
       },

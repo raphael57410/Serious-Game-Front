@@ -13,7 +13,7 @@ export function Home(props: Props) {
     return (
         <>
             <div className="w-full flex flex-col justify-between items-center md:w-3/6 lg:p-10">
-                <Title text={"Bienvenue sur Metz Numeric Game"}/>
+                <Title text={"Bienvenue sur Metz Numeric Game"} textCenter/>
                 <Text
                     text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum "}/>
                 <Button onClick={
