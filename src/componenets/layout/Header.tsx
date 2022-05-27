@@ -10,14 +10,14 @@ type Props = {
 };
 
 export function Header(props: Props) {
-    const [mobileMenuOpened, setMobileMenuOpened] = useState(true);
+    const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
 
     function openMobileMenu() {
         setMobileMenuOpened(!mobileMenuOpened);
     };
     return (
         <header className={clsx(styles.header_container, "flex justify-between relative", {
-            ["text-white"]: props.textWhite,
+            "text-white": props.textWhite,
         })}>
             <div className={clsx(styles.logo_container, "ml-10")}>
                 <div className={clsx(styles.logo, "h-56 w-40")}></div>
