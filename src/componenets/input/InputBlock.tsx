@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import clsx from "clsx";
 
 type Props = {
     label: string;
@@ -10,12 +11,17 @@ type Props = {
 };
 
 export function InputBlock(props: React.PropsWithChildren<Props>) {
+    const [onFocusInput, setOnFocusInput] = useState(false);
     return (
-        <div className={props.className}>
+        <div className={props.className} onBlur={() => {
+            setOnFocusInput(false);
+        }} onClick={() => {
+            setOnFocusInput(true);
+        }}>
             <div className={"flex-row"}>
-                <div className={"mr-10 mb-1"}>
+                <div className={clsx({ "text-primaryColor": onFocusInput }, "mr-10 mb-1")}>
                     {props.label}
-                    {props.required && <span className={"text-red-900 font-bold "}>*</span>}
+                    {props.required && <span className={"text-primaryColor font-bold "}>*</span>}
                 </div>
                 <div>{props.extralabel}</div>
             </div>

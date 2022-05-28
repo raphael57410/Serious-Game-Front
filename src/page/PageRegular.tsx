@@ -2,16 +2,16 @@ import { Header } from "../componenets/layout/Header";
 import React from "react";
 
 type Props = {
-    children: React.ReactNode
+    children: React.ReactNode,
+    fixedHeader?: boolean,
+    textWhite?: boolean,
 };
 
 export function PageRegular(props: Props) {
     return (
         <>
-            <Header textWhite={false}/>
-            <main className="main_container flex">
-                {props.children}
-            </main>
+            <Header textWhite={props.textWhite} fixed={props.fixedHeader}/>
+            {props.children}
         </>
     );
 }

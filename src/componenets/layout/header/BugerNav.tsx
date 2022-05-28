@@ -15,7 +15,7 @@ export function BurgerNav(props: Props) {
             className={clsx(
                 "w-full bg-bgColor h-56 flex flex-col" +
                 " justify-end items-center" +
-                " justify-between absolute -bottom-40",
+                " justify-between absolute top-14",
             )}>
             <NavLink to="/">formations</NavLink>
             <NavLink to="/">Contact</NavLink>
@@ -23,7 +23,7 @@ export function BurgerNav(props: Props) {
                 useCallback(() => navigate(URLS.auth.signIn(), { replace: true }), [navigate])
             } name={"Se connecter"} full={true} width="w-full"/>
             <Button onClick={
-                useCallback(() => navigate(URLS.auth.signIn(), { replace: true }), [navigate])
+                useCallback(() => navigate(URLS.auth.signUp(), { replace: true }), [navigate])
             } name={"S'inscrire"} full={false} width="w-full"/>
         </nav>
     );

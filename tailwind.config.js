@@ -6,6 +6,7 @@ module.exports = {
         primaryColor: 'var(--primary-color)',
         bgColor: 'var(--primary-background)',
         textColor: 'var(--text-color)',
+        inputBorderColor: 'var(--input-border-color)',
       },
       fontSize: {
         mediumSize: '28px',

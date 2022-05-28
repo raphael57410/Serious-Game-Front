@@ -1,27 +1,26 @@
 import clsx from "clsx";
-import styles from "../_css/header.module.css";
 import { Button } from "../../button";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { URLS } from "../../../_configs/URLS";
-import { useCallback } from "react";
 
 type Props = {};
 
 export function Nav
 (props: Props) {
     const navigate = useNavigate();
+    let location = useLocation();
 
     return (
         <nav
-            className={clsx(styles.nav_container, "hidden md:flex justify-center items-center justify-between w-full mr-10 ")}>
+            className={clsx("w-2/5 hidden md:flex justify-center items-center justify-between w-full mr-10 ")}>
             <NavLink to="/">formations</NavLink>
             <NavLink to="/">Contact</NavLink>
             <Button onClick={
-                useCallback(() => navigate(URLS.auth.signIn(), { replace: true }), [navigate])
+                () => navigate(URLS.auth.signIn(), { replace: true })
             } name={"Se connecter"} full={true} width="w-56"/>
-            <Button onClick={
-                useCallback(() => navigate(URLS.home(), { replace: true }), [navigate])
-            } name={"S'inscrire"} full={false} width="w-56"/>
+            {location.pathname != URLS.auth.signUp() && <Button onClick={
+                () => navigate(URLS.auth.signUp(), { replace: true })
+            } name={"S'inscrire"} full={false} width="w-56"/>}
         </nav>
     );
 }

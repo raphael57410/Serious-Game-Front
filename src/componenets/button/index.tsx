@@ -6,16 +6,18 @@ type Props = {
     full: boolean,
     borderColor?: boolean,
     width: "w-full" | "w-56"
-    onClick: () => void,
+    onClick?: () => void,
+    type?: "submit" | "button",
 };
 
 export function Button(props: Props) {
 
     return (
         <button
+            type={props.type}
             onClick={props.onClick}
             className={clsx(
-                `h-12 ${props.width} md:w-24 lg:w-28 xl:${props.width}`,
+                `h-12 ${props.width}`,
                 {
                     [styles.container_full]: props.full,
                     [styles.container_border]: !props.full,
