@@ -8,6 +8,8 @@ import IconVisible from "../../assets/logo/inputPassword/eyePassword.svg";
 import IconUnvisible from "../../assets/logo/inputPassword/eyePassword2.svg";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { URLS } from "../../_configs/URLS";
 
 type Props = {};
 
@@ -154,6 +156,9 @@ export function PageRegister(props: Props) {
                             />
                         </InputBlock>
                         <Button name={"S'inscrire"} full={true} width={"w-full"} type={"submit"}/>
+                        <p className={"text-center mt-2"}>vous avez deja un compte? <Link
+                            className={"text-primaryColor font-bold"} to={URLS.auth.signIn()}>Se
+                            connecter</Link></p>
                     </form>
                 </div>
                 <div

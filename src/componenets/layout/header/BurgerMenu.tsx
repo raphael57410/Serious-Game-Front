@@ -9,7 +9,7 @@ type Props = {
 export default function BurgerMenu(props: Props) {
     return (
         <div
-            className={"flex items-center mr-20 flex-col justify-center md:hidden"}
+            className={"flex items-center mr-16 flex-col justify-center md:hidden"}
             onClick={() => props.openMobileMenu()}
         >
             <div className={clsx("w-8 h-1 bg-primaryColor my-1.5", {
