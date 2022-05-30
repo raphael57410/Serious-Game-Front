@@ -40,7 +40,7 @@ export function PageLogin(props: Props) {
 
     return (
         <main className={"h-screen flex items-center justify-center"}>
-            <div className={"h-full w-full p-10 flex flex-col justify-center md:w-1/2"}>
+            <div className={"h-full w-full p-10 flex flex-col justify-center md:w-2/5"}>
                 <Title textCenter={true} text={"Se connecter"}/>
                 <form className={" flex flex-col"} onSubmit={handleSubmit(onSubmit)}>
                     <InputBlock className={"p-1"} label={"Email"} required>

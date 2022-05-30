@@ -4,6 +4,7 @@ import clsx from "clsx";
 type Props = {
     text: string,
     white?: boolean,
+    center?: boolean,
 };
 
 export function Text(props: Props) {
@@ -12,6 +13,7 @@ export function Text(props: Props) {
             styles.container,
             { "text-white": props.white },
             { "text-textColor": !props.white },
+            { "text-center": props.center },
         )}>{props.text}</p>
     );
 }

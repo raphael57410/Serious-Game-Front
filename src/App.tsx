@@ -6,10 +6,11 @@ import { NotFound } from "./page/notFound/NotFound";
 import { PageRegister } from "./page/register/PageRegister";
 import { URLS } from "./_configs/URLS";
 import { PageLogin } from "./page/login/PageLogin";
+import { PageFormations } from "./page/formations/PageFormations";
 
 function App() {
     return (
-        <div className="h-screen w-screen bg-bgColor">
+        <div className="h-full  bg-bgColor">
             <Routes>
                 <Route path={URLS.home()} element={
                     <PageRegular>
@@ -24,6 +25,11 @@ function App() {
                 <Route path={URLS.auth.signIn()} element={
                     <PageRegular fixedHeader>
                         <PageLogin/>
+                    </PageRegular>
+                }/>
+                <Route path={URLS.formations()} element={
+                    <PageRegular>
+                        <PageFormations/>
                     </PageRegular>
                 }/>
                 <Route path="*" element={<NotFound/>}/>

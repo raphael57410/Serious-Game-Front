@@ -50,7 +50,7 @@ export function PageRegister(props: Props) {
         <main className="h-full flex">
             <div className={"w-full h-screen flex flex-col-reverse items-center-center md:flex-row mt-0"}>
                 <div className={"flex flex-col p-10 justify-center md:w-1/2"}>
-                    <Title size text={"S'inscrire"} textCenter={false}/>
+                    <Title size={"sm"} text={"S'inscrire"} textCenter={false}/>
                     <form className={" flex flex-col"} onSubmit={handleSubmit(onSubmit)}>
                         <InputBlock className={"p-1"} label={"Nom"} required>
                             <Controller

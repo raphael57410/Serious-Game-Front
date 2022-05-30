@@ -13,7 +13,7 @@ export function Nav
     return (
         <nav
             className={clsx("w-2/5 hidden md:flex justify-center items-center justify-between w-full mr-10 ")}>
-            <NavLink to="/">formations</NavLink>
+            <NavLink to={URLS.formations()}>formations</NavLink>
             <NavLink to="/">Contact</NavLink>
             {location.pathname != URLS.auth.signIn() && <Button onClick={
                 () => navigate(URLS.auth.signIn(), { replace: true })
