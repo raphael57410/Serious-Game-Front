@@ -7,6 +7,7 @@ import { PageRegister } from "./page/register/PageRegister";
 import { URLS } from "./_configs/URLS";
 import { PageLogin } from "./page/login/PageLogin";
 import { PageFormations } from "./page/formations/PageFormations";
+import { DetailFormations } from "./page/DetailFormation/DetailFormations";
 
 function App() {
     return (
@@ -30,6 +31,16 @@ function App() {
                 <Route path={URLS.formations()} element={
                     <PageRegular>
                         <PageFormations/>
+                    </PageRegular>
+                }/>
+                <Route path={URLS.formations()} element={
+                    <PageRegular>
+                        <PageFormations/>
+                    </PageRegular>
+                }/>
+                <Route path={URLS.formations() + "/:id"} element={
+                    <PageRegular>
+                        <DetailFormations/>
                     </PageRegular>
                 }/>
                 <Route path="*" element={<NotFound/>}/>

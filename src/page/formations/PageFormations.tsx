@@ -31,7 +31,7 @@ type Props = {};
 export function PageFormations(props: Props) {
     return (
         <main className={"h-full flex flex-col items-center justify-center "}>
-            <div className={"w-1/2 p-10 border-b-2 border-b-cyan-600"}>
+            <div className={" p-10 border-b-2 border-b-cyan-600 lg:w-1/2"}>
                 <Title size={"2xl"} textCenter text={"Les formations Metz Numeric School"}/>
                 <Text
                     center
