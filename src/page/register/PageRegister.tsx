@@ -163,10 +163,11 @@ export function PageRegister(props: Props) {
                 </div>
                 <div
                     className={"text-center w-full h-full justify-end p-2 bg-textColor flex flex-col md:justify-center"}>
-                    <Title textCenter={false} text={"Rejoignez l’aventure Metz Numeric School"} white/>
+                    <Title size={"6xl"} textCenter={false} text={"Rejoignez l’aventure Metz Numeric School"} white/>
                     <Text
                         white
-                        text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit."}/>
+                        text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+                        size={"2xl"}/>
                 </div>
             </div>
         </main>

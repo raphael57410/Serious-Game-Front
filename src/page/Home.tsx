@@ -19,7 +19,8 @@ export function Home(props: Props) {
             <div className="w-full h-full flex flex-col justify-around items-center md:w-3/6">
                 <Title text={"Bienvenue sur Metz Numeric Game"} textCenter/>
                 <Text
-                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum "}/>
+                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum "}
+                    size={"lg"}/>
                 <Button onClick={
                     useCallback(() => navigate(URLS.auth.signIn(), { replace: true }), [navigate])
                 } name={"En savoir plus"} full={false} borderColor={true} width="w-56"/>

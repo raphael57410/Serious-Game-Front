@@ -12,10 +12,9 @@ export function Title(props: Props) {
 
     return (
         <h1 className={clsx(
-            `m-0 w-full text-${props.size} text-titleMobileSize  font-bold text-textColor md:text-5xl lg:text-titleSize`,
+            `m-0 w-full text-${props.size} text-titleMobileSize  font-bold text-textColor md:text-5xl lg:text-${props.size}`,
             { [styles.white]: props.white },
             { "text-center": props.textCenter },
-            { "lg:text-mediumSize": props.size != "" },
         )}
         >{props.text}
         </h1>
