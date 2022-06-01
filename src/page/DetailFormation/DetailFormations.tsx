@@ -1,7 +1,14 @@
+import { DetailFormationsCard } from "./components/DetailFormationsCard";
+
 type Props = {};
 
 export function DetailFormations(props: Props) {
     return (
-        <div>detail d'une formation</div>
+        <main className={"h-screen flex flex-col items-center"}>
+            <DetailFormationsCard/>
+            <DetailFormationsCard/>
+            <DetailFormationsCard/>
+            <DetailFormationsCard/>
+        </main>
     );
 }
