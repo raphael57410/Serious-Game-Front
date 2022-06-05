@@ -15,12 +15,12 @@ export class Background {
     this.img.src = "/gameAssets/environment/background.png";
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
-    ctx.drawImage(
+  draw() {
+    Game.ctx.drawImage(
       this.img,
       this.position.x,
       this.position.y,
-      Game.gameHeight * 1.77,
+      Game.gameWidth,
       Game.gameHeight
     );
   }

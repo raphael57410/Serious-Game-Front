@@ -1,21 +1,11 @@
-export interface IPlayer {
-  width: number;
-  height: number;
-  position: {
-    x: number;
-    y: number;
-  };
-  speed: number;
-  gravity: number;
-  velocity: {
-    x: number;
-    y: number;
-  };
+import { IMovingEntity } from "./IMovingEntity";
+
+export interface IPlayer extends IMovingEntity {
   direction: "left" | "right";
   moveLeft: () => void;
   moveRight: () => void;
   jump: () => void;
   stop: () => void;
-  draw: (ctx: CanvasRenderingContext2D) => void;
-  update: (ctx: CanvasRenderingContext2D) => void;
+  draw: () => void;
+  update: () => void;
 }

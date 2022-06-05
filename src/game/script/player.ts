@@ -1,7 +1,10 @@
 import { IPlayer } from "../interfaces/IPlayer";
 import { Game } from "./game";
+import { IGameProperties } from "../interfaces/IGameProperties";
+import { detectGroundCollision } from "./detectGroundCollision";
 
 export class Player implements IPlayer {
+  game: IGameProperties;
   width: number;
   height: number;
   position: { x: number; y: number };
@@ -12,7 +15,8 @@ export class Player implements IPlayer {
     y: number;
   };
   direction: "left" | "right";
-  constructor() {
+  constructor(game: IGameProperties) {
+    this.game = game;
     this.width = 50;
     this.height = 50;
     this.position = {
@@ -43,14 +47,29 @@ export class Player implements IPlayer {
     this.velocity.x = 0;
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
-    ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+  draw() {
+    Game.ctx.fillRect(
+      this.position.x,
+      this.position.y,
+      this.width,
+      this.height
+    );
   }
-  update(ctx: CanvasRenderingContext2D) {
+  update() {
+    //Gravity
     if (this.position.y + this.velocity.y !== 0)
       this.position.y += this.velocity.y;
     this.velocity.y += this.gravity;
+
+    //Horizontal movements
     this.position.x += this.velocity.x;
+
+    this.game.ground.forEach((groundElement) => {
+      if (detectGroundCollision(this, groundElement)) {
+        this.velocity.y = 0;
+        this.gravity = 0.5;
+      }
+    });
 
     if (this.position.y + this.height > Game.gameHeight) {
       this.velocity.y = 0;

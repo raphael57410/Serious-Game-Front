@@ -1,36 +1,57 @@
 import { Player } from "./player";
 import { IPlayer } from "../interfaces/IPlayer";
 import { InputHandler } from "../utils/inputHandler";
+import { IGameFunctions } from "../interfaces/IGameFunctions";
 import { Background } from "./background";
 import { IBackground } from "../interfaces/IBackground";
-import { IGameFunctions } from "../interfaces/IGameFunctions";
+import { GroundSection } from "./levels/groundSection";
+import { groundElements } from "./levels/groundElements";
+import { IGroundSection } from "../interfaces/IGroundSection";
+import { IGameProperties } from "../interfaces/IGameProperties";
 
-export class Game implements IGameFunctions {
+export class Game implements IGameFunctions, IGameProperties {
   static gameWidth: number;
   static gameHeight: number;
-  background: IBackground;
+  static ctx: CanvasRenderingContext2D;
+  ground: IGroundSection[];
   player: IPlayer;
+  background: IBackground;
 
   constructor(gameWidth: number, gameHeight: number) {
-    Game.gameWidth = gameWidth;
-    Game.gameHeight = gameHeight;
+    this.updateGameSize(gameWidth, gameHeight);
   }
   updateGameSize(gameWidth: number, gameHeight: number) {
     Game.gameWidth = gameWidth;
     Game.gameHeight = gameHeight;
   }
-  start() {
-    this.background = new Background();
-    this.player = new Player();
+  start(ctx: CanvasRenderingContext2D) {
+    Game.ctx = ctx;
+    this.player = new Player(this);
     new InputHandler(this.player);
+    this.background = new Background();
+    this.ground = [
+      new GroundSection(
+        groundElements.road,
+        4,
+        null,
+        groundElements.endRoadRight
+      ),
+      new GroundSection(
+        groundElements.road,
+        5,
+        groundElements.endRoadLeft,
+        null
+      ),
+    ];
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
-    this.background.draw(ctx);
-    this.player.draw(ctx);
+  draw() {
+    this.background.draw();
+    this.ground.forEach((element) => element.draw());
+    this.player.draw();
   }
 
-  update(ctx: CanvasRenderingContext2D) {
-    this.player.update(ctx);
+  update() {
+    this.player.update();
   }
 }

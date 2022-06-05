@@ -5,5 +5,5 @@ export interface IBackground {
   };
   img: HTMLImageElement;
 
-  draw: (ctx: CanvasRenderingContext2D) => void;
+  draw: () => void;
 }
