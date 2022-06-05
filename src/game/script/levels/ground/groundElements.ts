@@ -1,4 +1,4 @@
-import { images } from "../../utils/images";
+import { images } from "../../../resources/images";
 
 function createImage(src: string) {
   const img = new Image();

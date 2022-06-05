@@ -2,10 +2,10 @@ import { Player } from "./player";
 import { IPlayer } from "../interfaces/IPlayer";
 import { InputHandler } from "../utils/inputHandler";
 import { IGameFunctions } from "../interfaces/IGameFunctions";
-import { Background } from "./background";
+import { Background } from "./levels/background";
 import { IBackground } from "../interfaces/IBackground";
-import { GroundSection } from "./levels/groundSection";
-import { groundElements } from "./levels/groundElements";
+import { GroundSection } from "./levels/ground/groundSection";
+import { groundElements } from "./levels/ground/groundElements";
 import { IGroundSection } from "../interfaces/IGroundSection";
 import { IGameProperties } from "../interfaces/IGameProperties";
 

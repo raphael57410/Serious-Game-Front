@@ -1,7 +1,7 @@
 import { IPlayer } from "../interfaces/IPlayer";
 import { Game } from "./game";
 import { IGameProperties } from "../interfaces/IGameProperties";
-import { detectGroundCollision } from "./detectGroundCollision";
+import { detectGroundCollision } from "../utils/detectGroundCollision";
 
 export class Player implements IPlayer {
   game: IGameProperties;

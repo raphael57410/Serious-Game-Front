@@ -1,7 +1,7 @@
 import { MutableRefObject, PropsWithChildren, useEffect, useRef } from "react";
 import "./style.css";
 import { loadImages } from "./utils/loadImages";
-import { images } from "./utils/images";
+import { images } from "./resources/images";
 import { Game } from "./script/game";
 import { GameProvider } from "./GameContext";
 export default function GameLoop(props: { children?: PropsWithChildren<any> }) {

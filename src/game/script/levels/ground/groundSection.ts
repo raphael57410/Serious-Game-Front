@@ -1,5 +1,5 @@
-import { Game } from "../game";
-import { IGroundSection } from "../../interfaces/IGroundSection";
+import { Game } from "../../game";
+import { IGroundSection } from "../../../interfaces/IGroundSection";
 
 export class GroundSection implements IGroundSection {
   position: {
