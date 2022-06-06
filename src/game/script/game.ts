@@ -1,4 +1,4 @@
-import { Player } from "./player";
+import { Player } from "./character/player";
 import { IPlayer } from "../interfaces/IPlayer";
 import { InputHandler } from "../utils/inputHandler";
 import { IGameFunctions } from "../interfaces/IGameFunctions";
@@ -32,13 +32,13 @@ export class Game implements IGameFunctions, IGameProperties {
     this.ground = [
       new GroundSection(
         groundElements.road,
-        4,
+        6,
         null,
         groundElements.endRoadRight
       ),
       new GroundSection(
         groundElements.road,
-        5,
+        7,
         groundElements.endRoadLeft,
         null
       ),

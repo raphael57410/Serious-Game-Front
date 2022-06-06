@@ -17,8 +17,19 @@ export default function GameLoop(props: { children?: PropsWithChildren<any> }) {
       const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
       if (ctx) {
         gameStore.start(ctx);
+        let secondsPassed: number;
+        let oldTimeStamp: number;
+        let fps: number;
+        let fpsLimit = 15;
+        let now: number;
+        let then = Date.now();
+        let interval = 1000 / fpsLimit;
+        let delta: number;
 
-        const gameLoop = () => {
+        const gameLoop = (timeStamp: number) => {
+          requestAnimationFrame(gameLoop);
+          now = Date.now();
+          delta = now - then;
           if (
             Game.gameWidth !== window.innerWidth ||
             Game.gameHeight !== window.innerHeight
@@ -30,7 +41,25 @@ export default function GameLoop(props: { children?: PropsWithChildren<any> }) {
           ctx.clearRect(0, 0, Game.gameWidth, Game.gameHeight);
           gameStore.draw();
           gameStore.update();
-          requestAnimationFrame(gameLoop);
+
+          // Calculate the number of seconds passed since the last frame
+          secondsPassed = (timeStamp - oldTimeStamp) / 1000;
+          oldTimeStamp = timeStamp;
+
+          // Calculate fps
+          fps = Math.round(1 / secondsPassed);
+
+          // Draw number to the screen
+          ctx.fillStyle = "white";
+          ctx.fillRect(0, 0, 150, 50);
+          ctx.font = "25px Arial";
+          ctx.fillStyle = "black";
+          ctx.fillText("FPS: " + fps, 10, 30);
+
+          if (delta > interval) {
+            gameStore.player.frame++;
+            then = now - (delta % interval);
+          }
         };
         loadImages(Object.values(images), gameLoop);
       }

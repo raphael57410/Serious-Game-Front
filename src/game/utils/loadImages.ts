@@ -1,4 +1,7 @@
-export function loadImages(images: string[], onComplete: () => void) {
+export function loadImages(
+  images: string[],
+  onComplete: (timeStamp: number) => void
+) {
   let imageObjects = [];
 
   let loaded = 0;
@@ -7,7 +10,7 @@ export function loadImages(images: string[], onComplete: () => void) {
     console.log(loaded);
     if (loaded === images.length) {
       console.log("complete");
-      onComplete();
+      onComplete(0);
     }
   }
 

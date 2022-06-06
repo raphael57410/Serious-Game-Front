@@ -14,6 +14,10 @@ type TImages = {
   stoneRoadEnd: string;
   cliffLeft: string;
   groundFlatLeftSection: string;
+  characterIdle: string;
+  characterWalking: string;
+  characterJumpStart: string;
+  characterJumpLoop: string;
 };
 
 export const images: TImages = {
@@ -32,4 +36,8 @@ export const images: TImages = {
   stoneRoadEnd: "/gameAssets/groundElements/Ground_12.png",
   cliffLeft: "/gameAssets/groundElements/Ground_13.png",
   groundFlatLeftSection: "/gameAssets/groundElements/GroundFlatLeftSection.png",
+  characterIdle: "/gameAssets/character/idle.png",
+  characterWalking: "/gameAssets/character/walking.png",
+  characterJumpStart: "/gameAssets/character/jumpStart.png",
+  characterJumpLoop: "/gameAssets/character/jumpLoop.png",
 };
