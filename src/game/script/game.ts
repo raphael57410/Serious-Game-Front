@@ -2,20 +2,22 @@ import { Player } from "./character/player";
 import { IPlayer } from "../interfaces/IPlayer";
 import { InputHandler } from "../utils/inputHandler";
 import { IGameFunctions } from "../interfaces/IGameFunctions";
-import { Background } from "./levels/background";
+import { Background } from "./levels/Background";
 import { IBackground } from "../interfaces/IBackground";
-import { GroundSection } from "./levels/ground/groundSection";
-import { groundElements } from "./levels/ground/groundElements";
 import { IGroundSection } from "../interfaces/IGroundSection";
 import { IGameProperties } from "../interfaces/IGameProperties";
+import { LevelGeneration } from "./levels/LevelGeneration";
+import { ILevelGeneration } from "../interfaces/ILevelGeneration";
 
 export class Game implements IGameFunctions, IGameProperties {
   static gameWidth: number;
   static gameHeight: number;
+  static tileSize: number;
   static ctx: CanvasRenderingContext2D;
   ground: IGroundSection[];
   player: IPlayer;
   background: IBackground;
+  level: ILevelGeneration;
 
   constructor(gameWidth: number, gameHeight: number) {
     this.updateGameSize(gameWidth, gameHeight);
@@ -23,31 +25,19 @@ export class Game implements IGameFunctions, IGameProperties {
   updateGameSize(gameWidth: number, gameHeight: number) {
     Game.gameWidth = gameWidth;
     Game.gameHeight = gameHeight;
+    Game.tileSize = gameWidth / 17;
   }
-  start(ctx: CanvasRenderingContext2D) {
-    Game.ctx = ctx;
+  start() {
     this.player = new Player(this);
     new InputHandler(this.player);
     this.background = new Background();
-    this.ground = [
-      new GroundSection(
-        groundElements.road,
-        6,
-        null,
-        groundElements.endRoadRight
-      ),
-      new GroundSection(
-        groundElements.road,
-        7,
-        groundElements.endRoadLeft,
-        null
-      ),
-    ];
+    this.level = new LevelGeneration();
   }
 
   draw() {
     this.background.draw();
-    this.ground.forEach((element) => element.draw());
+    this.level.ground.forEach((groundElement) => groundElement.draw());
+    this.level.decor.forEach((decor) => decor.draw());
     this.player.draw();
   }
 

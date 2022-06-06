@@ -16,6 +16,7 @@ export class Player implements IPlayer {
     y: number;
   };
   direction: "left" | "right";
+  private initialPosition = { x: 10, y: 10 };
   private readonly sprite: HTMLImageElement;
   frame: number;
   private currentSprite: TSprite;
@@ -23,11 +24,8 @@ export class Player implements IPlayer {
   private jumpStart = false;
   constructor(game: IGameProperties) {
     this.game = game;
-    this.position = {
-      x: 10,
-      y: 10,
-    };
-    this.speed = 5;
+    this.position = this.initialPosition;
+    this.speed = 4;
     this.gravity = 0.5;
     this.velocity = {
       x: 0,
@@ -53,12 +51,12 @@ export class Player implements IPlayer {
     this.jumpStart = true;
     this.frame = 0;
     this.currentSprite = spriteList.jumpStart;
-    this.velocity.y -= 22;
+    this.velocity.y -= 24;
   }
   stop() {
     this.velocity.x = 0;
   }
-
+  death() {}
   draw() {
     this.sprite.src = this.currentSprite.src;
     Game.ctx.drawImage(
@@ -98,7 +96,7 @@ export class Player implements IPlayer {
     this.position.x += this.velocity.x;
 
     //Check ground collision with each ground sections
-    this.game.ground.forEach((groundElement) => {
+    this.game.level.ground.forEach((groundElement) => {
       if (detectGroundCollision(this, groundElement)) {
         this.velocity.y = 0;
         this.gravity = 0.5;
@@ -117,9 +115,6 @@ export class Player implements IPlayer {
       this.currentSprite = spriteList.walk;
     }
     if (this.position.y + this.height > Game.gameHeight) {
-      this.velocity.y = 0;
-      this.gravity = 0.5;
-      this.position.y = Game.gameHeight - this.height;
     }
   }
 }

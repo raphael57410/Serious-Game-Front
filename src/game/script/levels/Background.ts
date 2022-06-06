@@ -12,7 +12,7 @@ export class Background {
       x: 0,
       y: 0,
     };
-    this.img.src = "/gameAssets/environment/background.png";
+    this.img.src = "/gameAssets/environment/Background.png";
   }
 
   draw() {

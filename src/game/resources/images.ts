@@ -18,10 +18,15 @@ type TImages = {
   characterWalking: string;
   characterJumpStart: string;
   characterJumpLoop: string;
+  decor02: string;
+  decor03: string;
+  decor04: string;
+  maison01: string;
+  maison02: string;
 };
 
 export const images: TImages = {
-  background: "/gameAssets/environment/background.png",
+  background: "/gameAssets/environment/Background.png",
   slopingRoadRight: "/gameAssets/groundElements/Ground_01.png",
   road: "/gameAssets/groundElements/Ground_02.png",
   slopingRoadLeft: "/gameAssets/groundElements/Ground_03.png",
@@ -40,4 +45,9 @@ export const images: TImages = {
   characterWalking: "/gameAssets/character/walking.png",
   characterJumpStart: "/gameAssets/character/jumpStart.png",
   characterJumpLoop: "/gameAssets/character/jumpLoop.png",
+  decor02: "/gameAssets/environment/decor02.png",
+  decor03: "/gameAssets/environment/decor03.png",
+  decor04: "/gameAssets/environment/decor04.png",
+  maison01: "/gameAssets/environment/maison01.png",
+  maison02: "/gameAssets/environment/maison02.png",
 };

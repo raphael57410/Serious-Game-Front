@@ -6,8 +6,6 @@ export class GroundSection implements IGroundSection {
     x: number;
     y: number;
   };
-  tileWidth = 96;
-  tileHeight = 96;
   width: number;
   height: number;
 
@@ -22,23 +20,22 @@ export class GroundSection implements IGroundSection {
     startWith?: HTMLImageElement | null,
     endWith?: HTMLImageElement | null
   ) {
-    this.height = this.tileHeight;
     this.groundElement = groundElement;
     this.numberOfElement = numberOfElement;
-    this.width = this.tileWidth * this.numberOfElement;
+    this.width = Game.tileSize * this.numberOfElement;
     if (startWith) {
       this.startWith = startWith;
-      this.width += this.tileWidth;
+      this.width += Game.tileSize;
     }
 
     if (endWith) {
       this.endWith = endWith;
-      this.width += this.tileWidth;
+      this.width += Game.tileSize;
     }
 
     this.position = {
       x: this.startWith ? Game.gameWidth - this.width : 0,
-      y: Game.gameHeight - this.tileHeight,
+      y: Game.gameHeight - Game.tileSize,
     };
   }
 
@@ -47,38 +44,38 @@ export class GroundSection implements IGroundSection {
       if (this.startWith) {
         Game.ctx.drawImage(
           this.groundElement,
-          Game.gameWidth - this.tileWidth * i,
+          Game.gameWidth - Game.tileSize * i,
           this.position.y,
-          this.tileWidth,
-          this.tileHeight
+          Game.tileSize,
+          Game.tileSize
         );
       }
       if (this.endWith) {
         Game.ctx.drawImage(
           this.groundElement,
-          this.tileWidth * i,
+          Game.tileSize * i,
           this.position.y,
-          this.tileWidth,
-          this.tileHeight
+          Game.tileSize,
+          Game.tileSize
         );
       }
     }
     if (this.startWith) {
       Game.ctx.drawImage(
         this.startWith,
-        Game.gameWidth - this.tileWidth * this.numberOfElement,
+        Game.gameWidth - Game.tileSize * this.numberOfElement,
         this.position.y,
-        this.tileWidth,
-        this.tileHeight
+        Game.tileSize,
+        Game.tileSize
       );
     }
     if (this.endWith) {
       Game.ctx.drawImage(
         this.endWith,
-        this.tileWidth * this.numberOfElement,
+        Game.tileSize * this.numberOfElement,
         this.position.y,
-        this.tileWidth,
-        this.tileHeight
+        Game.tileSize,
+        Game.tileSize
       );
     }
   }

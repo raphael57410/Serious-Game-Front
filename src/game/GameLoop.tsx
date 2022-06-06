@@ -16,7 +16,8 @@ export default function GameLoop(props: { children?: PropsWithChildren<any> }) {
     if (canvas) {
       const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
       if (ctx) {
-        gameStore.start(ctx);
+        Game.ctx = ctx;
+        gameStore.start();
         let secondsPassed: number;
         let oldTimeStamp: number;
         let fps: number;
