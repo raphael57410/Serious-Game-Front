@@ -22,7 +22,7 @@ export function Header(props: Props) {
     };
     return (
         <header className={clsx(
-            "flex justify-between w-full pt-3 ",
+            "flex justify-between w-full pt-3 z-50",
             {
                 "text-white": props.textWhite,
                 "fixed": props.fixed,

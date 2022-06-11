@@ -17,7 +17,7 @@ export function Home(props: Props) {
         <main
             className={clsx(styles.main_container, "flex flex-col-reverse justify-around md:flex-row")}>
             <div className="w-full h-full flex flex-col justify-around items-center md:w-3/6">
-                <Title text={"Bienvenue sur Metz Numeric Game"} textCenter/>
+                <Title text={"Bienvenue sur Metz Numeric Game"} textCenter size={"7xl"}/>
                 <Text
                     text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum "}
                     size={"lg"}/>

@@ -7,7 +7,7 @@ type Props = {};
 
 export function DetailFormationsCard(props: Props) {
     return (
-        <div className={"bg-white mb-8 rounded-3xl lg:w-4/12 "}>
+        <div className={"bg-white mb-8 rounded-3xl lg:w-2/4"}>
             <div className={"h-full flex rounded-3xl w-full justify-between"}>
                 <div className={"rounded-3xl w-52"}>
                     <img src={CardImg} alt={"formation picture"} className={"h-full w-full rounded-3xl"}/>

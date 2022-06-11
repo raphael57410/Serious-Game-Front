@@ -8,6 +8,7 @@ import { URLS } from "./_configs/URLS";
 import { PageLogin } from "./page/login/PageLogin";
 import { PageFormations } from "./page/formations/PageFormations";
 import { DetailFormations } from "./page/DetailFormation/DetailFormations";
+import { PageGame } from "./page/game/PageGame";
 
 function App() {
     return (
@@ -28,6 +29,9 @@ function App() {
                         <PageLogin/>
                     </PageRegular>
                 }/>
+                <Route path={URLS.game()} element={
+                    <PageGame/>
+                }/>
                 <Route path={URLS.formations()} element={
                     <PageRegular>
                         <PageFormations/>
@@ -39,7 +43,7 @@ function App() {
                     </PageRegular>
                 }/>
                 <Route path={URLS.formations() + "/:id"} element={
-                    <PageRegular>
+                    <PageRegular fixedHeader>
                         <DetailFormations/>
                     </PageRegular>
                 }/>

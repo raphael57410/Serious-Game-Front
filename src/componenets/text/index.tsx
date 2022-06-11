@@ -5,11 +5,13 @@ type Props = {
     white?: boolean,
     center?: boolean,
     size: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl",
+    className?: string,
 };
 
 export function Text(props: Props) {
     return (
         <p className={clsx(
+            props.className,
             `text-${props.size}`,
             { "text-white": props.white },
             { "text-textColor": !props.white },

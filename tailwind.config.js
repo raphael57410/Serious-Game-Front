@@ -8,6 +8,11 @@ module.exports = {
         textColor: 'var(--text-color)',
         inputBorderColor: 'var(--input-border-color)',
       },
+      backgroundImage: {
+        'timer': 'url(/src/assets/logo/timeLogo.svg)',
+        'game': 'url(/src/assets/images/404.png)',
+        '404': 'url(/src/assets/images/404.png)',
+      },
       fontSize: {
         mediumSize: '28px',
         titleSize: '80px',
