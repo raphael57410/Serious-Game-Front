@@ -21,7 +21,7 @@ export default function GameLoop(props: { children?: PropsWithChildren<any> }) {
         let secondsPassed: number;
         let oldTimeStamp: number;
         let fps: number;
-        let fpsLimit = 15;
+        let fpsLimit = 20;
         let now: number;
         let then = Date.now();
         let interval = 1000 / fpsLimit;

@@ -1,10 +1,11 @@
 import { Game } from "../../game";
 import { IDecor } from "../../../interfaces/IDecor";
+import { TDecor } from "./decorElements";
 
 export class Decor implements IDecor {
-  private readonly decorElement: HTMLImageElement;
+  private readonly decorElement: TDecor;
   private readonly side: "left" | "right";
-  constructor(decorElement: HTMLImageElement, side: "left" | "right") {
+  constructor(decorElement: TDecor, side: "left" | "right") {
     this.decorElement = decorElement;
     this.side = side;
   }
@@ -12,11 +13,13 @@ export class Decor implements IDecor {
   draw() {
     if (this.side === "left") {
       Game.ctx.drawImage(
-        this.decorElement,
+        this.decorElement.image,
         0,
-        Game.gameHeight - Game.tileSize - Game.tileSize * 5,
-        Game.tileSize * 7,
-        Game.tileSize * 5
+        Game.gameHeight -
+          Game.tileSize -
+          Game.tileSize * this.decorElement.height,
+        Game.tileSize * this.decorElement.width,
+        Game.tileSize * this.decorElement.height
       );
     }
   }
