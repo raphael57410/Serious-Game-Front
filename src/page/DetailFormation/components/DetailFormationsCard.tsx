@@ -1,4 +1,4 @@
-import { Title } from "../../../componenets/title";
+import { Title } from "../../../components/title";
 import GrandEstLogo from "assets/logo/Grand_Est_Logo 1.svg";
 import ChevronLogo from "assets/logo/icons_chevron-right.svg";
 import CardImg from "assets/images/card_image.png";

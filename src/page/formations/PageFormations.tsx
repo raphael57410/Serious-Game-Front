@@ -1,5 +1,5 @@
-import { Title } from "../../componenets/title";
-import { Text } from "../../componenets/text";
+import { Title } from "../../components/title";
+import { Text } from "../../components/text";
 import { FormationSection } from "./FormationSection";
 import Image1 from "../../assets/images/image1.png";
 

@@ -1,4 +1,4 @@
-import { Title } from "../../componenets/title";
+import { Title } from "../../components/title";
 import clsx from "clsx";
 
 type Props = {};

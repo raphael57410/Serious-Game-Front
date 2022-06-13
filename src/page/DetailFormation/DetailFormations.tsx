@@ -1,7 +1,8 @@
-import { DetailFormationsCard } from "./components/DetailFormationsCard";
 import BanniereImg from "assets/images/banniereImg.png";
-import { Title } from "../../componenets/title";
-import { Text } from "../../componenets/text";
+import { Title } from "../../components/title";
+import { Text } from "../../components/text";
+import { DetailFormationsBlock } from "./components/DetailFormationsBlock";
+import { DetailFormationsCard } from "./components/DetailFormationsCard";
 
 type Props = {};
 
@@ -17,14 +18,17 @@ export function DetailFormations(props: Props) {
                 </div>
                 <img src={BanniereImg} className={"w-full"}/>
             </div>
-            <div className={"w-full flex items-center lg:w-1/2 my-8"}>
-                <Text className={"font-bold w-full md:w-1/4"} size={"lg"} text={"Liste de nos formations"}/>
-                <div className={"h-px w-full border-b-2 border-indigo-500"}></div>
-            </div>
-            <DetailFormationsCard/>
-            <DetailFormationsCard/>
-            <DetailFormationsCard/>
-            <DetailFormationsCard/>
+            <DetailFormationsBlock text={"niveaux1 de la formation"}>
+                <DetailFormationsCard/>
+                <DetailFormationsCard/>
+                <DetailFormationsCard/>
+            </DetailFormationsBlock>
+            <DetailFormationsBlock text={"niveaux 2 de la formation"}>
+                <DetailFormationsCard/>
+                <DetailFormationsCard/>
+                <DetailFormationsCard/>
+                <DetailFormationsCard/>
+            </DetailFormationsBlock>
         </main>
     );
 }

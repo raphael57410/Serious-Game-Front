@@ -9,6 +9,7 @@ import { PageLogin } from "./page/login/PageLogin";
 import { PageFormations } from "./page/formations/PageFormations";
 import { DetailFormations } from "./page/DetailFormation/DetailFormations";
 import { PageGame } from "./page/game/PageGame";
+import { AdminPage } from "./page/admin";
 
 function App() {
     return (
@@ -46,6 +47,9 @@ function App() {
                     <PageRegular fixedHeader>
                         <DetailFormations/>
                     </PageRegular>
+                }/>
+                <Route path={URLS.admin()} element={
+                    <AdminPage/>
                 }/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>

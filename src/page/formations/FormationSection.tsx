@@ -1,6 +1,6 @@
-import { Title } from "../../componenets/title";
-import { Text } from "../../componenets/text";
-import { Button } from "../../componenets/button";
+import { Title } from "../../components/title";
+import { Text } from "../../components/text";
+import { Button } from "../../components/button";
 
 type Props = {
     title: string,

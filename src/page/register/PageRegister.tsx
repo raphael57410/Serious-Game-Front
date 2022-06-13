@@ -1,9 +1,9 @@
-import { InputBlock } from "../../componenets/input/InputBlock";
-import { Input } from "../../componenets/input/Input";
-import { Title } from "../../componenets/title";
+import { InputBlock } from "../../components/input/InputBlock";
+import { Input } from "../../components/input/Input";
+import { Title } from "../../components/title";
 import { Controller, useForm } from "react-hook-form";
-import { Button } from "../../componenets/button";
-import { Text } from "../../componenets/text";
+import { Button } from "../../components/button";
+import { Text } from "../../components/text";
 import IconVisible from "../../assets/logo/inputPassword/eyePassword.svg";
 import IconUnvisible from "../../assets/logo/inputPassword/eyePassword2.svg";
 

@@ -1,6 +1,6 @@
-import { ProgressBar } from "../../componenets/game/ProgressBar";
-import Timer from "../../componenets/game/Timer";
-import { ResponseCard } from "../../componenets/game/ResponseCard";
+import { ProgressBar } from "../../components/game/ProgressBar";
+import Timer from "../../components/game/Timer";
+import { ResponseCard } from "../../components/game/ResponseCard";
 import { useState } from "react";
 
 type Props = {};

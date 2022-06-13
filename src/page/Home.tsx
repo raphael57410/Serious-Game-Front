@@ -1,7 +1,7 @@
-import { Title } from "../componenets/title";
-import { Text } from "../componenets/text";
+import { Title } from "../components/title";
+import { Text } from "../components/text";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../componenets/button";
+import { Button } from "../components/button";
 import { URLS } from "../_configs/URLS";
 import { useCallback } from "react";
 import styles from "./_css/home.module.css";
