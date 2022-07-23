@@ -16,7 +16,10 @@ export class Player implements IPlayer {
     y: number;
   };
   direction: "left" | "right";
-  private initialPosition = { x: 10, y: 10 };
+  initialPosition: {
+    x: number;
+    y: number;
+  };
   private readonly sprite: HTMLImageElement;
   frame: number;
   private currentSprite: TSprite;
@@ -24,12 +27,11 @@ export class Player implements IPlayer {
   private jumpStart = false;
   constructor(game: IGameProperties) {
     this.game = game;
-    this.position = this.initialPosition;
     this.speed = 4;
     this.gravity = 0.5;
     this.velocity = {
       x: 0,
-      y: 1,
+      y: 0,
     };
     this.direction = "right";
     this.sprite = new Image();
@@ -37,6 +39,11 @@ export class Player implements IPlayer {
     this.currentSprite = spriteList.idle;
     this.width = this.currentSprite.spriteWidth;
     this.height = this.currentSprite.spriteHeight;
+    this.initialPosition = {
+      x: 0,
+      y: Game.gameHeight - Game.tileSize - this.height,
+    };
+    this.position = this.initialPosition;
   }
 
   moveLeft() {
@@ -88,20 +95,25 @@ export class Player implements IPlayer {
       this.isInJump = true;
     } else this.isInJump = false;
 
+    //Horizontal movements
+    this.position.x += this.velocity.x;
+
     //Gravity
     this.position.y += this.velocity.y;
     this.velocity.y += this.gravity;
 
-    //Horizontal movements
-    this.position.x += this.velocity.x;
-
     //Check ground collision with each ground sections
-    this.game.level.ground.forEach((groundElement) => {
-      if (detectGroundCollision(this, groundElement)) {
-        this.velocity.y = 0;
-        this.gravity = 0.5;
-      }
-    });
+    if (this.position.x > 0 && this.position.x + this.width < Game.gameWidth) {
+      this.game.level.ground.forEach((groundElement) => {
+        if (detectGroundCollision(this, groundElement)) {
+          this.velocity.y = 0;
+          this.gravity = 0.5;
+        }
+      });
+    } else {
+      this.velocity.y = 0;
+      this.gravity = 0.5;
+    }
 
     //Player is in the air : Jump position
     if (this.isInJump && !this.jumpStart)

@@ -25,6 +25,6 @@ export class LevelGeneration implements ILevelGeneration {
         null
       ),
     ];
-    this.decor = [new Decor(decorElements.maison03, "left")];
+    this.decor = [new Decor(decorElements.decor02, "left")];
   }
 }
