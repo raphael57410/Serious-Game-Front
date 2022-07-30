@@ -4,7 +4,7 @@ import { PageRegular } from "./page/PageRegular";
 import { Home } from "./page/Home";
 import { NotFound } from "./page/notFound/NotFound";
 import { PageRegister } from "./page/register/PageRegister";
-import { URLS } from "./_configs/URLS";
+import { URLS, URLS_ADMIN } from "./_configs/URLS";
 import { PageLogin } from "./page/login/PageLogin";
 import { PageFormations } from "./page/formations/PageFormations";
 import { DetailFormations } from "./page/DetailFormation/DetailFormations";
@@ -48,7 +48,7 @@ function App() {
                         <DetailFormations/>
                     </PageRegular>
                 }/>
-                <Route path={URLS.admin()} element={
+                <Route path={URLS_ADMIN.admin()} element={
                     <AdminPage/>
                 }/>
                 <Route path="*" element={<NotFound/>}/>

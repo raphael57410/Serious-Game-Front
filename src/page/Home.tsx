@@ -6,14 +6,16 @@ import { URLS } from "../_configs/URLS";
 import { useCallback } from "react";
 import styles from "./_css/home.module.css";
 import clsx from "clsx";
+import { useUserStore } from "../users/_stores/userContext";
 
 type Props = {};
 
 export function Home(props: Props) {
     const navigate = useNavigate();
+    const userStore = useUserStore();
 
+    console.log(userStore);
     return (
-
         <main
             className={clsx(styles.main_container, "flex flex-col-reverse justify-around md:flex-row")}>
             <div className="w-full h-full flex flex-col justify-around items-center md:w-3/6">

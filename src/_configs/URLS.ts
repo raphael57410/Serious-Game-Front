@@ -7,5 +7,8 @@ export const URLS = {
         signUp: () => `/auth/signUp`,
     },
     user: {},
+};
+
+export const URLS_ADMIN = {
     admin: () => "/mns-admin",
 };

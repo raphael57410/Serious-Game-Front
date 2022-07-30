@@ -14,7 +14,6 @@ export function ResponseCard(props: Props) {
     const [response, setResponse] = useState<boolean | undefined>();
 
     useEffect(() => {
-        console.log("laaa");
     }, [response]);
 
     return (

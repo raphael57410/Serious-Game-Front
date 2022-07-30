@@ -10,15 +10,10 @@ import IconUnvisible from "../../assets/logo/inputPassword/eyePassword2.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { URLS } from "../../_configs/URLS";
+import { authStore, signUpCredentials } from "../../ressources/auth/AuthStore";
 
 type Props = {};
 
-interface FormData {
-    lastName: string,
-    firstName: string,
-    email: string,
-    password: string,
-}
 
 export function PageRegister(props: Props) {
     const {
@@ -30,17 +25,33 @@ export function PageRegister(props: Props) {
         defaultValues: {
             lastName: "",
             firstName: "",
-            email: "",
             password: "",
+            email: "",
+            address: "",
+            phone: "",
         },
     });
     const [iconVisible, setIconVisible] = useState(false);
 
-    function onSubmit(data: FormData) {
-        console.log("submit! => ", data);
+    function onSubmit(data: signUpCredentials) {
+        authStore.signUp(data).then(response => {
+            console.log(response);
+            reset({
+                lastName: "",
+                firstName: "",
+                address: "",
+                phone: "",
+                email: "",
+                password: "",
+            });
+        }).catch(err => {
+            console.log(err);
+        });
         reset({
             lastName: "",
             firstName: "",
+            address: "",
+            phone: "",
             email: "",
             password: "",
         });
@@ -96,6 +107,44 @@ export function PageRegister(props: Props) {
                                     },
                                 }}
                                 name="firstName"
+                                control={control}
+                                render={({ field }) => (
+                                    <Input
+                                        {...field}
+                                        type="text"
+                                        error={errors.firstName}
+                                    />
+                                )}
+                            />
+                        </InputBlock>
+                        <InputBlock className={"p-1"} label={"Adresse"} required>
+                            <Controller
+                                rules={{
+                                    required: {
+                                        value: true,
+                                        message: "champ obligatoire",
+                                    },
+                                }}
+                                name="address"
+                                control={control}
+                                render={({ field }) => (
+                                    <Input
+                                        {...field}
+                                        type="text"
+                                        error={errors.firstName}
+                                    />
+                                )}
+                            />
+                        </InputBlock>
+                        <InputBlock className={"p-1"} label={"Téléphone"} required>
+                            <Controller
+                                rules={{
+                                    required: {
+                                        value: true,
+                                        message: "champ obligatoire",
+                                    },
+                                }}
+                                name="phone"
                                 control={control}
                                 render={({ field }) => (
                                     <Input

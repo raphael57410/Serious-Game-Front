@@ -8,6 +8,7 @@ import { Button } from "../../components/button";
 import { Link } from "react-router-dom";
 import { URLS } from "../../_configs/URLS";
 import { useState } from "react";
+import { authStore } from "../../ressources/auth/AuthStore";
 
 type Props = {};
 
@@ -31,7 +32,11 @@ export function PageLogin(props: Props) {
     const [iconVisible, setIconVisible] = useState(false);
 
     function onSubmit(data: FormData) {
-        console.log("submit Login! => ", data);
+        authStore.signIn(data).then(response => {
+            console.log("USER connecté", response);
+        }).catch(error => {
+            console.log(error);
+        });
         reset({
             email: "",
             password: "",

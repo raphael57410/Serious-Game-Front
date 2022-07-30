@@ -2,6 +2,7 @@ import { ProgressBar } from "../../components/game/ProgressBar";
 import Timer from "../../components/game/Timer";
 import { ResponseCard } from "../../components/game/ResponseCard";
 import { useState } from "react";
+import { useUserStore } from "../../users/_stores/userContext";
 
 type Props = {};
 
@@ -153,6 +154,8 @@ const FAKE_QUESTIONS = [
 
 export function PageGame(props: Props) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const user = useUserStore();
+    console.log(user);
 
     return (
         <main className={"h-screen flex items-center justify-center"}>
